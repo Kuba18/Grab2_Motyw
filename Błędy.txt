@@ -1,0 +1,23 @@
+1. Sprawdź, czy GRUB jest zainstalowany
+W terminalu wpisz:
+
+bash
+grub-install --version
+Jeśli GRUB jest zainstalowany, zobaczysz coś w stylu:
+
+grub-install (GRUB) 2.06
+Wersja 2.06 lub nowsza jest kompatybilna z paczką Elegant-grub2-themes.
+
+2. Sprawdź, czy GRUB działa jako bootloader
+Możesz sprawdzić, czy GRUB zarządza Twoim bootowaniem:
+
+bash
+sudo efibootmgr
+Jeśli GRUB jest skonfigurowany, zobaczysz go na liście urządzeń bootujących w wynikach.
+
+3. Upewnij się, że pliki GRUB są w odpowiedniej lokalizacji
+Sprawdź, czy pliki GRUB znajdują się w katalogu /boot/grub. Wpisz:
+
+bash
+ls /boot/grub
+Powinieneś zobaczyć tam pliki konfiguracyjne, takie jak grub.cfg lub foldery odpowiadające Twojej instalacji.

@@ -1,0 +1,48 @@
+Jak dostosować motyw Elegant-grub2-themes na Manjaro Plasma 6
+1. Zainstaluj wymagane pakiety
+Upewnij się, że masz zainstalowane następujące pakiety:
+
+bash
+sudo pacman -Syu imagemagick grub git
+2. Pobierz repozytorium
+Pobierz paczkę za pomocą git:
+
+bash
+git clone https://github.com/vinceliuice/Elegant-grub2-themes.git
+cd Elegant-grub2-themes
+3. Zmiana tła
+Przygotuj obraz w odpowiedniej rozdzielczości (np. 1920x1080 dla 1080p).
+
+Nazwij obraz background.jpg i umieść go w głównym katalogu projektu.
+
+4. Zmiana ikon
+Zmodyfikuj pliki w folderze assets.
+
+Po edycji uruchom:
+
+bash
+cd assets
+./render-all.sh
+5. Powiększenie czcionki i ikon
+Edytuj plik /etc/default/grub:
+
+bash
+sudo nano /etc/default/grub
+Dodaj/zmień linię:
+
+bash
+GRUB_GFXMODE=1920x1080x32
+Zapisz zmiany i zaktualizuj konfigurację GRUB:
+
+bash
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+6. Instalacja motywu
+Uruchom skrypt instalacyjny z odpowiednimi parametrami:
+
+bash
+sudo ./install.sh -t [theme] -s [resolution] -i [icon]
+Przykład:
+
+bash
+sudo ./install.sh -t mountain -s 1080p -i left
+Możesz teraz skopiować całą treść i wykorzystać jako instrukcję! Jeśli napotkasz jakiekolwiek trudności, śmiało pytaj! 
